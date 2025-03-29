@@ -9,8 +9,16 @@
 // 5. Return the bandName variable.
 
 function generateBandName(clothingColor, lastFoodEaten) {
-  // Your code here
-  // Initialize bandName to an empty string
-  // Function to capitalize the first letter of each word
-  // Construct the band name
+  // Function to capitalize the first letter of a word if it exists
+  function capitalize(word) {
+    if (!word && word !== 0) return "";
+    const str = String(word);
+    const cleanWord = str.trim().toLowerCase();
+    return cleanWord ? cleanWord.charAt(0).toUpperCase() + cleanWord.slice(1) : "";
+  }
+
+  // Construct the band name, handling null and empty values
+  return "The " + capitalize(clothingColor) + " " + capitalize(lastFoodEaten);
 }
+
+console.log(generateBandName("red", "apple"));

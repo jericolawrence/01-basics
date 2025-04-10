@@ -14,7 +14,9 @@ function generateBandName(clothingColor, lastFoodEaten) {
     if (!word && word !== 0) return "";
     const str = String(word);
     const cleanWord = str.trim().toLowerCase();
-    return cleanWord ? cleanWord.charAt(0).toUpperCase() + cleanWord.slice(1) : "";
+    return cleanWord
+      ? cleanWord.charAt(0).toUpperCase() + cleanWord.slice(1)
+      : "";
   }
 
   // Construct the band name, handling null and empty values
